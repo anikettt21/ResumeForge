@@ -1,7 +1,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --display: 'Syne', system-ui, sans-serif;
+  --display: 'Space Grotesk', system-ui, sans-serif;
   --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
   --mono: 'JetBrains Mono', monospace;
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -113,7 +113,7 @@ nav {
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--text);
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   white-space: nowrap;
   flex-shrink: 0;
   transition: color var(--transition);
@@ -264,27 +264,29 @@ nav {
   position: relative;
 }
 .hero-eyebrow {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 24px;
-  display: flex; align-items: center; gap: 12px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
 }
-.hero-eyebrow::before {
-  content: '';
-  width: 32px; height: 2px;
+.hero-eyebrow .eyebrow-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
   background: var(--accent);
-  border-radius: 2px;
+  display: inline-block;
+  flex-shrink: 0;
 }
+.hero-eyebrow span { color: var(--accent); }
 .hero-name {
   font-family: var(--display);
-  font-size: clamp(3.2rem, 6.5vw, 5.2rem);
-  font-weight: 800;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 700;
   color: var(--text);
-  line-height: 1.0;
-  letter-spacing: -0.03em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
 .hero-name span {
@@ -325,18 +327,19 @@ nav {
 }
 .stat-number {
   font-family: var(--display);
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 800;
   color: var(--accent);
   line-height: 1;
   letter-spacing: -0.02em;
 }
 .stat-label {
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-dim);
+  letter-spacing: 0.09em;
+  color: var(--text-muted);
+  margin-top: 4px;
 }
 .stat-sep {
   width: 1px; background: var(--border2);
@@ -350,25 +353,27 @@ nav {
   align-items: center;
 }
 .contact-item {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 0.88rem;
+  display: flex; align-items: center; gap: 7px;
+  font-size: 0.82rem;
   color: var(--text-muted);
   text-decoration: none;
   font-weight: 500;
-  padding: 8px 14px;
+  padding: 7px 14px;
   border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  transition: all 0.2s;
+  border: 1px solid var(--border2);
+  background: var(--card);
+  transition: all 0.22s;
+  white-space: nowrap;
+  height: 36px;
 }
 .contact-item:hover {
   color: var(--accent);
   border-color: var(--accent);
   background: var(--glow);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px var(--glow);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--glow);
 }
-.contact-item svg { flex-shrink: 0; opacity: 0.8; }
+.contact-item svg { flex-shrink: 0; opacity: 0.7; }
 
 /* ── SECTION ── */
 section {
@@ -392,8 +397,8 @@ section:last-of-type { border-bottom: none; }
 }
 .section-title {
   font-family: var(--display);
-  font-size: 1.55rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--text);
   white-space: nowrap;
   letter-spacing: -0.01em;
@@ -474,7 +479,7 @@ section:last-of-type { border-bottom: none; }
 }
 .project-name {
   font-family: var(--display);
-  font-size: 1.1rem; font-weight: 700;
+  font-size: 1.08rem; font-weight: 700;
   color: var(--text);
   letter-spacing: -0.01em;
 }
