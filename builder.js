@@ -342,9 +342,6 @@ document.getElementById('pc-apply').addEventListener('click', () => {
   rvPhoto.style.display = 'block';
   rvPhoto.removeAttribute('data-placeholder');
 
-  // Show remove button
-  document.getElementById('photo-remove-btn').style.display = 'inline';
-
   closePhotoEditor();
   save();
 });
@@ -361,14 +358,11 @@ document.getElementById('photo-remove-btn').addEventListener('click', () => {
       <circle cx="12" cy="13" r="4" />
     </svg>`;
 
-  // Reset resume preview photo to placeholder
+  // Hide photo entirely from resume preview
   const rvPhoto = document.getElementById('rv-photo');
-  rvPhoto.src = 'demo-photo.png';
-  rvPhoto.setAttribute('data-placeholder', 'true');
-  rvPhoto.style.display = '';
-
-  // Hide remove button
-  document.getElementById('photo-remove-btn').style.display = 'none';
+  rvPhoto.src = '';
+  rvPhoto.style.display = 'none';
+  rvPhoto.removeAttribute('data-placeholder');
 
   // Clear file input
   document.getElementById('photo-input').value = '';
@@ -911,7 +905,6 @@ function restore() {
       const rvPhoto = document.getElementById('rv-photo');
       rvPhoto.src = photoDataUrl; rvPhoto.style.display = 'block';
       rvPhoto.removeAttribute('data-placeholder');
-      document.getElementById('photo-remove-btn').style.display = 'inline';
     }
     // Simple inputs
     if (data.inputs) simpleInputIds.forEach(id => {
