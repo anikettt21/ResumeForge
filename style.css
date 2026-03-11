@@ -793,6 +793,10 @@ img {
     margin: 0 -40px 12px;
 }
 
+.mini-resume.tpl-executive .mr-photo {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
 .mini-resume.tpl-executive .mr-name {
     color: #fff;
     font-family: var(--serif);
@@ -962,6 +966,10 @@ img {
     color: #fff;
     padding: 28px 40px 20px;
     margin: 0 -40px 12px;
+}
+
+.mini-resume.tpl-bold .mr-photo {
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .mini-resume.tpl-bold .mr-name {
