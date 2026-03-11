@@ -342,6 +342,9 @@ document.getElementById('pc-apply').addEventListener('click', () => {
   rvPhoto.style.display = 'block';
   rvPhoto.removeAttribute('data-placeholder');
 
+  // Update remove button text
+  document.getElementById('photo-remove-btn').textContent = 'Remove';
+
   closePhotoEditor();
   save();
 });
@@ -905,6 +908,7 @@ function restore() {
       const rvPhoto = document.getElementById('rv-photo');
       rvPhoto.src = photoDataUrl; rvPhoto.style.display = 'block';
       rvPhoto.removeAttribute('data-placeholder');
+      document.getElementById('photo-remove-btn').textContent = 'Remove';
     }
     // Simple inputs
     if (data.inputs) simpleInputIds.forEach(id => {
