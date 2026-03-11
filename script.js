@@ -129,19 +129,27 @@ function renderMiniResume(templateId) {
   if (hasHeaderBand) {
     headerHTML = `
       <div class="mr-header-band">
-        <div class="mr-name">${s.name}</div>
-        <div class="mr-title">${s.title}</div>
-        <div class="mr-contacts">
-          <span>${s.email}</span><span>${s.phone}</span><span>${s.location}</span>
+        <div class="mr-header-left">
+          <div class="mr-name">${s.name}</div>
+          <div class="mr-title">${s.title}</div>
+          <div class="mr-contacts">
+            <span>${s.email}</span><span>${s.phone}</span><span>${s.location}</span>
+          </div>
         </div>
+        <img class="mr-photo" src="demo-photo.png" alt="Profile" />
       </div>
     `;
   } else {
     headerHTML = `
-      <div class="mr-name">${s.name}</div>
-      <div class="mr-title">${s.title}</div>
-      <div class="mr-contacts">
-        <span>${s.email}</span><span>${s.phone}</span><span>${s.location}</span>
+      <div class="mr-header-row">
+        <div class="mr-header-left">
+          <div class="mr-name">${s.name}</div>
+          <div class="mr-title">${s.title}</div>
+          <div class="mr-contacts">
+            <span>${s.email}</span><span>${s.phone}</span><span>${s.location}</span>
+          </div>
+        </div>
+        <img class="mr-photo" src="demo-photo.png" alt="Profile" />
       </div>
       <div class="mr-divider"></div>
     `;

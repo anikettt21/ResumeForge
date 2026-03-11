@@ -599,6 +599,39 @@ img {
     margin-bottom: 3px;
 }
 
+/* Header row with photo */
+.mr-header-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.mr-header-row .mr-header-left {
+    flex: 1;
+}
+
+.mr-header-band {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.mr-header-band .mr-header-left {
+    flex: 1;
+}
+
+.mr-photo {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+}
+
 .mr-title {
     font-size: 0.68rem;
     font-weight: 700;
