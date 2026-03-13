@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .bg-circle { fill: #ffffff; stroke: #f0f0f0; stroke-width: 14; }
+      .brand-text { font-family: 'Inter', system-ui, sans-serif; font-weight: 800; font-size: 58px; fill: #000000; letter-spacing: -1px; text-anchor: middle; }
+      .tagline { font-family: 'Inter', system-ui, sans-serif; font-weight: 600; font-size: 21px; fill: #8a8a8a; letter-spacing: 4px; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <circle class="bg-circle" cx="256" cy="256" r="236" />
+  
+  <g transform="translate(196, 125)">
+    <!-- Document Base Shape with fold -->
+    <path d="M 15 0 H 75 Q 85 0 92 7 L 112 27 Q 120 35 120 45 V 125 Q 120 140 105 140 H 15 Q 0 140 0 125 V 15 Q 0 0 15 0 Z" fill="#000000" />
+    <!-- Fold Ear details, in the image it looks like a continuous shape, so solid black is fine -->
+    <!-- But actually the folded corner is often a separate shape or it's just a silhouette. The image shows a silhouette where the top right corner has a "flap" shape. Let's carve out the top right corner precisely. -->
+    <path d="M 80 0 V 25 Q 80 35 90 35 H 120 Z" fill="#ffffff" />
+    <path d="M 80 0 V 20 Q 80 30 90 30 L 112 30 Q 120 30 115 25 L 90 0 Z" fill="#000000" />
+
+    <!-- Cutouts -->
+    <g fill="#ffffff">
+      <!-- "R" -->
+      <path d="M 25 25 H 45 Q 65 25 65 40 Q 65 52 55 57 L 68 73 H 53 L 44 58 H 38 V 73 H 25 Z m 13 11 V 48 H 42 Q 49 48 49 42 Q 49 36 42 36 H 38 Z" />
+      
+      <!-- Underscore/Dot -->
+      <rect x="75" y="62" width="18" height="11" />
+      
+      <!-- Two horizontal lines -->
+      <rect x="25" y="85" width="68" height="11" />
+      <rect x="25" y="105" width="68" height="11" />
+    </g>
+  </g>
+
+  <!-- ResumeForge Text -->
+  <text x="256" y="325" class="brand-text">ResumeForge</text>
+
+  <!-- Tagline arc -->
+  <path id="curve" d="M 90 350 A 185 185 0 0 0 422 350" fill="transparent" />
+  <text>
+    <textPath href="#curve" startOffset="50%" class="tagline">YOUR PERFECT TEMPLATE</textPath>
+  </text>
+</svg>
