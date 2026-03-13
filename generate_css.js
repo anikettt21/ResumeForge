@@ -118,43 +118,57 @@ const getLayoutStyles = (prefix, b, id, c, layout) => {
 
     // Custom sidebar layouts utilizing Grid
     if (layout === 'sidebar-left') {
-        styles += `${prefix} { display: grid; grid-template-columns: 28% 1fr; gap: 0 40px; grid-template-areas: "header header" "sidebar main" "sidebar main" "sidebar main" "sidebar main" "sidebar main"; }\n`;
+        styles += `${prefix} { display: grid; grid-template-columns: 28% 1fr; gap: 0 40px; align-items: start; }\n`;
         if (!b) { styles += `${prefix} { gap: 0 16px; }\n`; }
         // Builder mappings
         if (b) {
-            styles += `${prefix} .rv-header { grid-area: header; }\n`;
-            styles += `${prefix} .rv-contacts { grid-area: sidebar; border-right: 1px solid ${c.border}; padding-right: 20px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; margin-bottom: 20px; }\n`;
+            styles += `${prefix} .rv-header { grid-column: 1 / -1; grid-row: 1; }\n`;
+            styles += `${prefix} .rv-contacts { grid-column: 1; grid-row: 2; border-right: 1px solid ${c.border}; padding-right: 20px; padding-bottom: 20px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }\n`;
             styles += `${prefix} .rv-contact-item { justify-content: flex-start; width: 100%; word-break: break-all; }\n`;
             styles += `${prefix} .rv-header-line { display: none; }\n`;
-            styles += `${prefix} #rv-skills-section { grid-area: sidebar; margin-top: 180px; padding-right: 20px; }\n`; // offset below contacts
-            styles += `${prefix} #rv-summary-section { grid-area: main; }\n`;
-            styles += `${prefix} #rv-exp-section { grid-area: main; margin-top: 100px; }\n`;
-            styles += `${prefix} #rv-edu-section { grid-area: main; margin-top: 400px; }\n`;
+            styles += `${prefix} #rv-skills-section { grid-column: 1; grid-row: 3 / 8; padding-right: 20px; border-right: 1px solid ${c.border}; height: 100%; }\n`;
+            styles += `${prefix} .rv-skills-row { flex-direction: column; align-items: flex-start; gap: 6px; }\n`;
+            styles += `${prefix} .rv-skills-cat { min-width: auto; }\n`;
+
+            styles += `${prefix} #rv-summary-section { grid-column: 2; grid-row: 2; }\n`;
+            styles += `${prefix} #rv-exp-section { grid-column: 2; grid-row: 3; }\n`;
+            styles += `${prefix} #rv-projects-section { grid-column: 2; grid-row: 4; }\n`;
+            styles += `${prefix} #rv-edu-section { grid-column: 2; grid-row: 5; }\n`;
+            styles += `${prefix} #rv-extras-section { grid-column: 2; grid-row: 6; }\n`;
         } else {
-            styles += `${prefix} .mr-header-row, ${prefix} .mr-header-band { grid-area: header; }\n`;
+            styles += `${prefix} .mr-header-row, ${prefix} .mr-header-band { grid-column: 1 / -1; }\n`;
             styles += `${prefix} .mr-divider { display: none; }\n`;
-            styles += `${prefix} .mr-section-summary, ${prefix} .mr-section-exp, ${prefix} .mr-section-edu { grid-column: 2; }\n`;
-            styles += `${prefix} .mr-section-skills { grid-column: 1; grid-row: 2 / span 3; border-right: 1px solid ${c.border}; padding-right: 12px; }\n`;
+            styles += `${prefix} .mr-section-summary { grid-column: 2; grid-row: 2; }\n`;
+            styles += `${prefix} .mr-section-exp { grid-column: 2; grid-row: 3; }\n`;
+            styles += `${prefix} .mr-section-edu { grid-column: 2; grid-row: 4; }\n`;
+            styles += `${prefix} .mr-section-skills { grid-column: 1; grid-row: 2 / 5; border-right: 1px solid ${c.border}; padding-right: 12px; }\n`;
         }
     }
 
     if (layout === 'sidebar-right') {
-        styles += `${prefix} { display: grid; grid-template-columns: 1fr 28%; gap: 0 40px; grid-template-areas: "header header" "main sidebar" "main sidebar" "main sidebar" "main sidebar" "main sidebar"; }\n`;
+        styles += `${prefix} { display: grid; grid-template-columns: 1fr 28%; gap: 0 40px; align-items: start; }\n`;
         if (!b) { styles += `${prefix} { gap: 0 16px; }\n`; }
         if (b) {
-            styles += `${prefix} .rv-header { grid-area: header; }\n`;
-            styles += `${prefix} .rv-contacts { grid-area: sidebar; border-left: 1px solid ${c.border}; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; margin-bottom: 20px; }\n`;
+            styles += `${prefix} .rv-header { grid-column: 1 / -1; grid-row: 1; }\n`;
+            styles += `${prefix} .rv-contacts { grid-column: 2; grid-row: 2; border-left: 1px solid ${c.border}; padding-left: 20px; padding-bottom: 20px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }\n`;
             styles += `${prefix} .rv-contact-item { justify-content: flex-start; width: 100%; word-break: break-all; }\n`;
             styles += `${prefix} .rv-header-line { display: none; }\n`;
-            styles += `${prefix} #rv-skills-section { grid-area: sidebar; margin-top: 180px; padding-left: 20px; }\n`;
-            styles += `${prefix} #rv-summary-section { grid-area: main; }\n`;
-            styles += `${prefix} #rv-exp-section { grid-area: main; margin-top: 100px; }\n`;
-            styles += `${prefix} #rv-edu-section { grid-area: main; margin-top: 400px; }\n`;
+            styles += `${prefix} #rv-skills-section { grid-column: 2; grid-row: 3 / 8; padding-left: 20px; border-left: 1px solid ${c.border}; height: 100%; }\n`;
+            styles += `${prefix} .rv-skills-row { flex-direction: column; align-items: flex-start; gap: 6px; }\n`;
+            styles += `${prefix} .rv-skills-cat { min-width: auto; }\n`;
+
+            styles += `${prefix} #rv-summary-section { grid-column: 1; grid-row: 2; }\n`;
+            styles += `${prefix} #rv-exp-section { grid-column: 1; grid-row: 3; }\n`;
+            styles += `${prefix} #rv-projects-section { grid-column: 1; grid-row: 4; }\n`;
+            styles += `${prefix} #rv-edu-section { grid-column: 1; grid-row: 5; }\n`;
+            styles += `${prefix} #rv-extras-section { grid-column: 1; grid-row: 6; }\n`;
         } else {
-            styles += `${prefix} .mr-header-row, ${prefix} .mr-header-band { grid-area: header; }\n`;
+            styles += `${prefix} .mr-header-row, ${prefix} .mr-header-band { grid-column: 1 / -1; }\n`;
             styles += `${prefix} .mr-divider { display: none; }\n`;
-            styles += `${prefix} .mr-section-summary, ${prefix} .mr-section-exp, ${prefix} .mr-section-edu { grid-column: 1; }\n`;
-            styles += `${prefix} .mr-section-skills { grid-column: 2; grid-row: 2 / span 3; border-left: 1px solid ${c.border}; padding-left: 12px; }\n`;
+            styles += `${prefix} .mr-section-summary { grid-column: 1; grid-row: 2; }\n`;
+            styles += `${prefix} .mr-section-exp { grid-column: 1; grid-row: 3; }\n`;
+            styles += `${prefix} .mr-section-edu { grid-column: 1; grid-row: 4; }\n`;
+            styles += `${prefix} .mr-section-skills { grid-column: 2; grid-row: 2 / 5; border-left: 1px solid ${c.border}; padding-left: 12px; }\n`;
         }
     }
 
