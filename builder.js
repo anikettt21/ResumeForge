@@ -939,6 +939,24 @@ restore();
 renderPreview();
 
 // ================================================================
+//  MOBILE SCALE — sets --mobile-scale for CSS transform on small screens
+// ================================================================
+function updateMobileScale() {
+  const paper = document.getElementById('resume-preview');
+  if (!paper) return;
+  if (window.innerWidth <= 780) {
+    // Use window.innerWidth (not 100vw) to exclude scrollbar width
+    const scale = window.innerWidth / 720;
+    paper.style.setProperty('--mobile-scale', scale);
+  } else {
+    // On desktop, remove the property so the default (no transform) applies
+    paper.style.removeProperty('--mobile-scale');
+  }
+}
+updateMobileScale();
+window.addEventListener('resize', updateMobileScale);
+
+// ================================================================
 //  MOBILE TAB SWITCHER
 // ================================================================
 function switchTab(tab) {

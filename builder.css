@@ -1768,14 +1768,16 @@ body {
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1) !important;
     min-height: 980px;
 
-    /* Scale down from top-left to fit the viewport width */
+    /* Scale down from top-left to fit the viewport width.
+       --mobile-scale is set by JS for reliable cross-browser support.
+       Fallback: use a conservative 0.5 scale if JS hasn't run yet. */
     transform-origin: top left;
-    transform: scale(calc(100vw / 720px));
+    transform: scale(var(--mobile-scale, 0.5));
 
-    /* The scaled element still occupies 720×980 in layout.
-       Pull margins to shrink the layout box to the visual size. */
-    margin-bottom: calc(-980px * (1 - 100vw / 720px)) !important;
-    margin-right: calc(-720px * (1 - 100vw / 720px)) !important;
+    /* Shrink the layout box to match the visual (scaled) size.
+       This prevents overflow and ensures scrolling works correctly. */
+    margin-bottom: calc(-980px * (1 - var(--mobile-scale, 0.5))) !important;
+    margin-right: calc(-720px * (1 - var(--mobile-scale, 0.5))) !important;
   }
 
   .preview-active-badge {
