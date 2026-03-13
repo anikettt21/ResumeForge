@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - ResumeForge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Playfair+Display:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="mp-header" id="mp-header">
+        <div class="mp-header-inner">
+            <a href="index.html" class="mp-brand">
+                <div class="mp-brand-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                    </svg>
+                </div>
+                <span class="mp-brand-name">ResumeForge</span>
+            </a>
+            <nav class="mp-nav">
+                <a href="index.html#templates" class="mp-nav-link">Templates</a>
+                <a href="index.html#how-it-works" class="mp-nav-link">How It Works</a>
+            </nav>
+            <a href="builder.html" class="mp-header-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                Build Resume
+            </a>
+        </div>
+    </header>
+
+    <main class="mp-legal-section">
+        <div class="mp-legal-container">
+            <h1 class="mp-legal-title">Contact Us</h1>
+            <div class="mp-legal-content">
+                <p>Have questions, feedback, or facing issues? We are here to help!</p>
+
+                <form action="#" method="POST" style="margin-top: 30px;"
+                    onsubmit="event.preventDefault(); alert('Thanks for reaching out! This is a demo template.');">
+                    <div class="contact-form-group">
+                        <label class="contact-form-label" for="name">Your Name</label>
+                        <input type="text" id="name" name="name" class="contact-form-input" placeholder="John Doe"
+                            required />
+                    </div>
+                    <div class="contact-form-group">
+                        <label class="contact-form-label" for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="contact-form-input"
+                            placeholder="john@example.com" required />
+                    </div>
+                    <div class="contact-form-group">
+                        <label class="contact-form-label" for="message">Message</label>
+                        <textarea id="message" name="message" class="contact-form-textarea"
+                            placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="contact-submit-btn">Send Message</button>
+                </form>
+
+                <h2 style="margin-top: 40px;">Other ways to reach us</h2>
+                <p>Email us directly at: <a href="mailto:support@resumeforge.com">support@resumeforge.com</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mp-footer">
+        <div class="mp-footer-inner">
+            <div class="mp-footer-brand">
+                <div class="mp-brand-icon small">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                    </svg>
+                </div>
+                <span>ResumeForge</span>
+            </div>
+            <div class="mp-footer-links" style="margin-top: 10px; display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="about.html" style="color: #6b7280; font-size: 0.875rem; text-decoration: none;">About</a>
+                <a href="privacy.html" style="color: #6b7280; font-size: 0.875rem; text-decoration: none;">Privacy
+                    Policy</a>
+                <a href="terms.html" style="color: #6b7280; font-size: 0.875rem; text-decoration: none;">Terms &amp;
+                    Conditions</a>
+                <a href="contact.html" style="color: #6b7280; font-size: 0.875rem; text-decoration: none;">Contact</a>
+            </div>
+            <p class="mp-footer-copy" style="margin-top: 10px;">&copy; 2026 ResumeForge. Build your career with
+                confidence. All templates are free to use.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
