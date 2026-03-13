@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  },
+  "name": "resumeforge",
+  "version": "1.0.0",
+  "description": "A complete, free-to-use resume platform where users can browse premium templates, preview them in full detail, and build professional resumes — all in the browser with zero sign-up.",
+  "main": "builder.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anikettt21/ResumeForge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anikettt21/ResumeForge/issues"
+  },
+  "homepage": "https://github.com/anikettt21/ResumeForge#readme"
+}
